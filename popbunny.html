@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="uu.css">
+    <title>POP Bunny</title>
+</head>
+<body>
+<div id="app">
+  <h1 id="tam">POP Bunny</h1>
+  
+  <button v-if="bunny===0" @click="openMouthImg" class="btn"><img src="img/1.jpg" id="ra"></button>
+  <button v-if="bunny===1" @click="closeMouthImg" class="btn"><img src="img/1.jpg" id="ra"></button>
+  <p id="tams">Score:{{counter}}</p>
+</div>
+</body>
+</html>
+<script>
+    const openMouthImg="./img/1.jpg";
+    const closeMouthImg="./img/2.jpg";
+    var app = new Vue({
+  el: '#app',
+  data: {
+    counter:0,
+    bunny:0,
+  },
+  methods:{
+    openMouthImg: function(){
+      ra.src=openMouthImg
+      this.counter++
+      this.bunny++
+    },
+    closeMouthImg: function(){
+      ra.src=closeMouthImg
+      this.counter++
+      this.bunny=0
+    },
+  }
+})
+</script>
